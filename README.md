@@ -73,7 +73,7 @@ One way is using `bind` in a method that is already bound to the component:
     constructor() {
         // Constructor is bound to the react component
         super();
-        this.fetchPlayerData.bind(this);
+        this.fetchPlayerData. = this.fetchPlayerData.bind(this);
     }
 
     fetchPlayerData() {

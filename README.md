@@ -109,7 +109,7 @@ An other way to do this is passing an `arrow function` to the components method 
   }
 ```
 
-The downside to this method, is that when you render multiple `<Player />` components, the `fetchPlayerData` method will be created for each component individually.
+Performance-wise, this approach (though not noticable) is not the best one. When you render multiple `<Player />` components, the `fetchPlayerData` method will be created for each component individually.
 
 
 ## DOM

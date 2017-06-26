@@ -8,36 +8,66 @@ Never update state directly. Always make a copy of state if you are going to mut
 
 
 Wrong:
-`this.state.player = 'Mark Evans';`
+`this.state.level = 'Click Clock Wood';`
 
 
 Good:
-`this.setState({ player: 'Mark Evans' });`
+`this.setState({ level: 'Click Clock Wood' });`
 
 ### Passing state object
 Never pass your whole state. This is because you may have more states and you don't want to let React check everything. Just pass an object.
 
 
 Wrong:
-`this.setState(players);`
+`this.setState(level);`
 
 
 Good:
-`this.setState({ players: players });`
+`this.setState({ level: level });`
 
 
 ## Components
 
-### Statefull vs Stateless
+### Statefull vs Stateless vs Functions
 If you don't need other methods other than render, you don't need to create a statefull component. Instead create a stateless component:
 
 ```
-  const stateless = (props) => {
+  const level = (props) => {
     return (
-      <div> Some JSX </div>
+      <div>
+        <h1> {props.level.name} </h1>
+        <img src={props.level.avatar} />
+        <p> {props.level.description} </p>
+      </div>
     )
   }
 ```
+Declaration:
+```  
+  <Level name="Freezeezy Peak" avatar="freezeezypeak.jpg" description="It's very cold here!" />
+```
+
+Even better is a plain function, performance-wise:
+
+```
+  const level = (props) => {
+    return (
+      <div>
+        <h1> {props.level.name} </h1>
+        <img src={props.level.avatar} />
+        <p> {props.level.description} </p>
+      </div>
+    )
+  }
+```
+
+Declaration:
+
+```
+{ Level({ name: "Freeezeezy Peak", avatar:"freezeezypeak.jpg", description:"It's very cold here!" })}
+```
+
+Source: https://medium.com/missive-app/45-faster-react-functional-components-now-3509a668e69f 
 
 ## Events
 Events are attached via the component.
@@ -67,7 +97,7 @@ Events are attached via the component.
   }
 ```
 
-## What is this?
+## What is 'this'?
 All custom class methods are not bound to the actual React component. Those methods need to be bound manually to the component, else this is `null`.
 
 One way is using `bind` in a method that is already bound to the component:

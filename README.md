@@ -28,8 +28,8 @@ Good:
 
 ## Components
 
-### Stateful vs Stateless
-If you don't need other methods other than render, you don't need to create a statefull component. Instead create a stateless.
+### Statefull vs Stateless
+If you don't need other methods other than render, you don't need to create a statefull component. Instead create a stateless component:
 
 ```
   const stateless = (props) => {
@@ -48,9 +48,13 @@ Events are attached via the component.
     constructor() {
         // Constructor is bound to the react component
         super();
-        this.getPlayers.bind(this);
+        this.goToPlayer.bind(this);
     }
 
+    showPlayerPage() {
+      route.go('/');
+    }
+    
     goToPlayer(e) {
       return this.showPlayerPage();
     }

@@ -32,11 +32,11 @@ Good:
 If you don't need other methods other than render, you don't need to create a statefull component. Instead create a stateless.
 
 `
-const stateless = (props) => {
-  return (
-    <div> Some JSX </div>
-  )
-}
+    const stateless = (props) => {
+      return (
+        <div> Some JSX </div>
+      )
+    }
 `
 
 ## Events
@@ -44,23 +44,23 @@ Events are attached via the component.
 
 
 `
-  class Inazuma extends Component {
-    constructor() {
-        // Constructor is bound to the react component
-        super();
-        this.getPlayers.bind(this);
-    }
+    class Inazuma extends Component {
+      constructor() {
+          // Constructor is bound to the react component
+          super();
+          this.getPlayers.bind(this);
+      }
 
-    goToPlayer(e) {
-      return this.showPlayerPage();
-    }
+      goToPlayer(e) {
+        return this.showPlayerPage();
+      }
 
-    render() {
-      return (
-        <button onClick={this.goToPlayer}> </button>
-      )
+      render() {
+        return (
+          <button onClick={this.goToPlayer}> </button>
+        )
+      }
     }
-  }
 `
 
 ## What is this?
@@ -69,23 +69,23 @@ All custom class methods are not bound to the actual React component. Those meth
 One way is using `bind` in a method that is already bound to the component:
 
 `
-  class Inazuma extends Component  {
-    constructor() {
-        // Constructor is bound to the react component
-        super();
-        this.fetchPlayerData. = this.fetchPlayerData.bind(this);
-    }
+    class Inazuma extends Component  {
+      constructor() {
+          // Constructor is bound to the react component
+          super();
+          this.fetchPlayerData. = this.fetchPlayerData.bind(this);
+      }
 
-    fetchPlayerData() {
-      return players.all();
-    }
+      fetchPlayerData() {
+        return players.all();
+      }
 
-    render() {
-      return (
-        <button onClick={this.fetchPlayerData}> Fetch all players! </button>
-      )
+      render() {
+        return (
+          <button onClick={this.fetchPlayerData}> Fetch all players! </button>
+        )
+      }
     }
-  }
 `
 
 
@@ -97,20 +97,19 @@ By using function `refs` you can create access to the element in custom methods.
 When this input is rendered to the page, this `ref` will create a reference on the class itself by the name you attach to the class. This then can be access, in this case in any method with: `this.hissatsuName`. In the console you can use `$r.hissatsuName` to referencw the value.
 
 `
-  class Hissatsu extends Component {
-    constructor() {
-      super();
-    }
+    class Hissatsu extends Component {
+      constructor() {
+        super();
+      }
 
-    render() {
-      return(
-        <input type='text' required ref={ (input) => {
-            // run a function
-              this.hissatsuName = input;
-            }
-          }  
-      )
+      render() {
+        return(
+          <input type='text' required ref={ (input) => {
+              // run a function
+                this.hissatsuName = input;
+              }
+            }  
+        )
+      }
     }
-  }
-
 `

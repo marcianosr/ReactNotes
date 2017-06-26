@@ -54,7 +54,7 @@ Events are attached via the component.
     showPlayerPage() {
       route.go('/');
     }
-    
+
     goToPlayer(e) {
       return this.showPlayerPage();
     }
@@ -73,7 +73,7 @@ All custom class methods are not bound to the actual React component. Those meth
 One way is using `bind` in a method that is already bound to the component:
 
 ```
-  class Inazuma extends Component  {
+  class Player extends Component  {
     constructor() {
         // Constructor is bound to the react component
         super();
@@ -91,6 +91,25 @@ One way is using `bind` in a method that is already bound to the component:
     }
   }
 ```
+
+An other way to do this is passing an `arrow function` to the components method like this:
+
+```
+  class Player extends Component  {
+
+    fetchPlayerData() {
+      return players.all();
+    }
+
+    render() {
+      return (
+        <button onClick={() => { this.fetchPlayerData() }}> Fetch all players! </button>
+      )
+    }
+  }
+```
+
+The downside to this method, is that when you render multiple `<Player />` components, the `fetchPlayerData` method will be created for each component individually.
 
 
 ## DOM

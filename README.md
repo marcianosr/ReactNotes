@@ -67,7 +67,7 @@ Declaration:
 { Level({ name: "Freeezeezy Peak", avatar:"freezeezypeak.jpg", description:"It's very cold here!" })}
 ```
 
-Source: https://medium.com/missive-app/45-faster-react-functional-components-now-3509a668e69f 
+Source: https://medium.com/missive-app/45-faster-react-functional-components-now-3509a668e69f
 
 ## Events
 Events are attached via the component.
@@ -166,3 +166,12 @@ When this input is rendered to the page, this `ref` will create a reference on t
     }
   }
 ```
+
+### Case Sensitive Renderering
+Be aware that it is convention that components always start with a capital letter. When using lowercase, React thinks its HTML and passes a `String` to `React.createElement` instead of passing the Constructor function.
+
+Wrong:
+ `<kazooie />` compiles to --> `React.createElement('kazooie');`
+
+Good:
+ `<Kazooie />` compiles to --> `React.createElement(Kazooie);`

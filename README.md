@@ -1,35 +1,65 @@
 # ReactNotes
-React Notes describing my best practices.
+ThReact Notes describing my best practices.
+
+## React Internals
+A bit of text about React under the hood.
+
+## Why React?
+- DOM is slow, JavaScript is faster. 
+- React minimizes writes to the DOM.
+
+### JSX
+JSX is the templating syntax of React which looks a lot like HTML, but actually produces React Elements.
+Below is a simple JSX example:
+
+
+```
+const Game = () => (
+  <div>
+    <h1>Banjo-Kazooie</h1>
+  </div>
+)
+```
+
+This is however not what the browser sees and executes. When the React component renders, the browser executes this:
+
+```
+const Game = () => (
+    React.createElement('div', null,
+      React.createElement('h1', null,
+        'Banjo-Kazooie'
+      )
+    )
+)
+```
 
 ## State
 
-### Set state
-Never update state directly. Always make a copy of state if you are going to mutate it. This is better for performance.
+### State Mutation
+In React-world never update state directly. Always make a copy of state if you are going to mutate it. This is better for performance.
 
-
-Wrong:
+Incorrect:
 `this.state.level = 'Click Clock Wood';`
 
 
-Good:
+Correct:
 `this.setState({ level: 'Click Clock Wood' });`
 
-### Passing state object
-Never pass your whole state. This is because you may have more states and you don't want to let React check everything. Just pass an object.
+### Passing State Object
+Never pass your whole in your whole state object, but split it up in smaller parts. This is because you may have more states and you don't want to let React check all your states unnecerssarily. Just pass in a single object:
 
-
-Wrong:
+Incorrect:
 `this.setState(level);`
 
 
-Good:
+Correct:
 `this.setState({ level: level });`
 
 
 ## Components
 
-### Statefull vs Stateless vs Functions
-If you don't need other methods other than render, you don't need to create a statefull component. Instead create a stateless component:
+### Stateful vs Stateless vs Functions
+If you don't need other methods other than render, you don't need to create a stateful component. Instead create a stateless component:
 
 ```
   const level = (props) => {
@@ -42,6 +72,7 @@ If you don't need other methods other than render, you don't need to create a st
     )
   }
 ```
+
 Declaration:
 ```  
   <Level name="Freezeezy Peak" avatar="freezeezypeak.jpg" description="It's very cold here!" />
@@ -62,7 +93,6 @@ Even better is a plain function, performance-wise:
 ```
 
 Declaration:
-
 ```
 { Level({ name: "Freeezeezy Peak", avatar:"freezeezypeak.jpg", description:"It's very cold here!" })}
 ```

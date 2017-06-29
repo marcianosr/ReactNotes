@@ -1,15 +1,30 @@
 # ReactNotes
-ThReact Notes describing my best practices.
+For learning purposes, I created 'ReactNotes' to describe how I interpret the workings of React and best practices of it.
+
 
 ## React Internals
-A bit of text about React under the hood.
+React under the hood. React Elements, React Components, Virtual DOM.
 
-## Why React?
-- DOM is slow, JavaScript is faster. 
-- React minimizes writes to the DOM.
+### Virtual DOM
+Reading and writing/updating to the 'real' DOM is a slow process. The Virtual DOM is what makes React fast. The Virtual DOM is an exact copy of the real DOM Tree, which allows React to do computations in this Virtual DOM rather than the 'real' DOM.
+
+The Virtual DOM consist of `React Elements`. However these virtual representations of the DOM are stateless and immutable, so we developers can't work directly with them.
+
+To work as much as possible with the Virtual DOM, we need React components. React components are stateful, and have access to the only way updating the Virtual DOM: Setting state. React converts components to React elements (which are the elements in the Virtual DOM). When a component has changed, changes are made in the Virtual DOM, will then be compared to the DOM and make as little as possible changes.
+
+
+### Mounting components
+The first cycle is the initial render. This cycle starts at the top and goes down the tree to render the tree. React is using `document.createElement` to create DOM elements.  
+
+The second cycle is updating. Things that will update a React component are a call to:
+
+ - setState();
+ - forceUpdate();
+
 
 ### JSX
-JSX is the templating syntax of React which looks a lot like HTML, but actually produces React Elements.
+JSX is the templating syntax of React which looks a lot like HTML, but actually produces React Elements. When the components render, React calls it's internal function `React.createElement(component)` which adds the component to the Virtual DOM.
+
 Below is a simple JSX example:
 
 

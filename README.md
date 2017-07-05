@@ -48,6 +48,10 @@ const Game = () => (
 )
 ```
 
+
+## Immutability
+https://gist.github.com/sebmarkbage/07bbe37bc42b6d4aef81
+
 ## State
 
 ### State Mutation
@@ -220,3 +224,14 @@ Wrong:
 
 Good:
  `<Kazooie />` compiles to --> `React.createElement(Kazooie);`
+
+
+
+## Glossary
+
+React:
+ReactDOM:
+VirtualDOM:
+JSX:
+Expression container: `{this.props.children}`
+Immutability

@@ -189,7 +189,7 @@ One way is using `bind` in a method that is already bound to the component:
   }
 ```
 
-An other way to do this is passing an `arrow function` to the components method like this:
+Another way to do this is passing an `arrow function` to the components method like this:
 
 ```
   class Player extends Component  {
@@ -206,7 +206,7 @@ An other way to do this is passing an `arrow function` to the components method 
   }
 ```
 
-Performance-wise, this approach (though not noticable) is not the best one. When you render multiple `<Player />` components, the `fetchPlayerData` method will be created for each component individually.
+Performance-wise, this approach (though not noticable in small apps), is not the best one. When you render multiple `<Player />` components, the `fetchPlayerData` method will be recreated for each component individually.
 
 
 ## DOM

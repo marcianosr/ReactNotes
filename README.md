@@ -1,6 +1,16 @@
 # ReactNotes
-For learning purposes, I created 'ReactNotes' to describe how I interpret the workings of React and best practices of it.
+For learning purposes, I created 'ReactNotes' to describe what I learned from React, how I interpret the workings of React and how to apply best practices.
 
+
+## Why React?
+Apart from the Virtual DOM advantages (see Virtual DOM part for this), I think React forces you to write clean and reusable code in an easier way.    
+
+- Component-based writing of elements: React's nature works with a component-based structure. This is makes it easier to think and break down the structure of your application.
+- PropTypes: Type checking is not really implemented in JavaScript itself unless you create it yourself. React comes with a small library that helps you checking the types of data you put in your components.
+
+Sometimes some actions in React seem a little harder to do, but writing better code can sometimes be harder or more time-consuming task.
+
+*to be continued*
 
 ## React Internals
 React under the hood. React Elements, React Components, Virtual DOM.
@@ -224,6 +234,17 @@ Wrong:
 
 Good:
  `<Kazooie />` compiles to --> `React.createElement(Kazooie);`
+
+
+
+## Serverside Rendering & Universal React Apps
+*to be continued*
+
+### Thinking of users without JavaScript.
+React is JavaScript. If users choose to turn of JavaScript in the browser, they end up seeing a blank page.
+*to be continued*
+
+
 
 
 

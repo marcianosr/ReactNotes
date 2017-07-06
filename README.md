@@ -82,6 +82,7 @@ Correct:
 `this.setState({ level: 'Click Clock Wood' });`
 
 ### Immutability
+*to be continued*
 
 ### Passing State Object
 Never pass your whole in your whole state object, but split it up in smaller parts. This is because you may have more states and you don't want to let React check all your states unnecessarily. Just pass in a single object:
@@ -243,7 +244,7 @@ Good:
  `<Kazooie />` compiles to --> `React.createElement(Kazooie);`
 
 ## PropTypes
-
+*to be continued*
 
 ## Serverside Rendering & Universal React Apps
 *to be continued*
@@ -265,6 +266,7 @@ React is JavaScript. If users choose to turn of JavaScript in the browser, they 
 
 ### Sources
 - https://reactforbeginners.com/
+- https://www.awesomereact.com/playlists/deep-dive-into-react
 - http://reactkungfu.com/2015/10/the-difference-between-virtual-dom-and-dom/
 - https://gist.github.com/sebmarkbage/07bbe37bc42b6d4aef81
 - https://medium.com/missive-app/45-faster-react-functional-components-now-3509a668e69f

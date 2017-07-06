@@ -262,3 +262,4 @@ React is JavaScript. If users choose to turn of JavaScript in the browser, they 
 - https://reactforbeginners.com/
 - http://reactkungfu.com/2015/10/the-difference-between-virtual-dom-and-dom/
 - https://gist.github.com/sebmarkbage/07bbe37bc42b6d4aef81
+- https://medium.com/missive-app/45-faster-react-functional-components-now-3509a668e69f

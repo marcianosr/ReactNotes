@@ -1,11 +1,12 @@
 # ReactNotes
-For learning purposes, I created 'ReactNotes' to describe what I learned from React, how I interpret the workings of React and how to apply best practices.
+For learning purposes and getting better at React, I created 'ReactNotes' to describe what I learned from React, how I interpret the workings of React and how to apply best practices, with code.
 
 
 ## Why React?
 Apart from the Virtual DOM advantages (see Virtual DOM part for this), I think React forces you to write clean and reusable code in an easier way.    
 
-- Component-based writing of elements: React's nature works with a component-based structure. This is makes it easier to think and break down the structure of your application.
+- No Manual DOM traversal: It's easy to get lost in a complex app and while updating data in the DOM. Finding, inserting, updating, removing DOM nodes using JavaScript and passing the right data to the right node can be cumbersome. In React it's the other way round. You declare your component with it's JSX and data (state or props). In React you only update state. React handles DOM manipulation when changing data, all under the hood.
+- Component-based writing of elements: React's nature works with a component-based structure. This is makes it easier to think and break down the structure of your application. You declare your component with its JSX and the expected state data. 
 - PropTypes: Type checking is not really implemented in JavaScript itself unless you create it yourself. React comes with a small library that helps you checking the types of data you put in your components.
 
 Sometimes some actions in React seem a little harder to do, but writing better code can sometimes be harder or more time-consuming task.
@@ -166,7 +167,7 @@ One way is using `bind` in a method that is already bound to the component:
     constructor() {
         // Constructor is bound to the react component
         super();
-        this.fetchPlayerData. = this.fetchPlayerData.bind(this);
+        this.fetchPlayerData = this.fetchPlayerData.bind(this);
     }
 
     fetchPlayerData() {
@@ -235,24 +236,22 @@ Wrong:
 Good:
  `<Kazooie />` compiles to --> `React.createElement(Kazooie);`
 
-
+## PropTypes
 
 ## Serverside Rendering & Universal React Apps
 *to be continued*
 
-### Thinking of users without JavaScript.
+### Thinking of users without JavaScript
 React is JavaScript. If users choose to turn of JavaScript in the browser, they end up seeing a blank page.
 *to be continued*
 
 
-
-
-
 ## Glossary
 
-React:
-ReactDOM:
-VirtualDOM:
-JSX:
-Expression container: `{this.props.children}`
-Immutability
+- React:
+- ReactDOM:
+- VirtualDOM:
+- JSX:
+- Expression container: `{this.props.children}`
+- Immutability:
+- PropTypes:

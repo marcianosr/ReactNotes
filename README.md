@@ -1,9 +1,8 @@
 # ReactNotes
-For learning purposes and getting better at React, I created 'ReactNotes' to describe what I learned from React, how I interpret the workings of React and how to apply best practices, with code.
-
+For learning purposes and getting better at React, I created 'ReactNotes' to describe what I learned from React, how I interpret the workings of React and how to apply best practices, with little code examples as much as possible.
 
 ## Why React?
-Apart from the Virtual DOM advantages (see Virtual DOM part for this), I listed my
+Apart from the Virtual DOM advantages (more on this later), I listed my reasons on why I would use React:
 
 - No Manual DOM traversal: It's easy to get lost in a complex app and while updating data in the DOM. Finding, inserting, updating, removing DOM nodes using JavaScript and passing the right data to the right node can be cumbersome. In React it's the other way round. You declare your component with it's JSX and data (state or props). In React you only update state. React handles DOM manipulation when changing data, all under the hood.
 - Component-based writing of elements: React's nature works with a component-based structure. This is makes it easier to think and break down the structure of your application. You declare (think and construct) your component with how it looks like, the expected state data it should receive and place it in projects hierarchy. I think React invites you to think of how to write your code in a clean and reusable way.
@@ -15,7 +14,7 @@ Sometimes some actions in React seem a little harder to do, but writing better c
 *to be continued*
 
 ## React Internals
-React under the hood. React Elements, React Components, Virtual DOM.
+The inner workings of React: React Elements, React Components and the Virtual DOM.
 
 ### Virtual DOM
 Reading and writing/updating to the 'real' DOM is a slow process. The Virtual DOM is what makes React fast. The Virtual DOM is an exact copy of the real DOM Tree, which allows React to do computations in this Virtual DOM rather than the 'real' DOM.
@@ -30,8 +29,8 @@ The first cycle is the initial render. This cycle starts at the top and goes dow
 
 The second cycle is updating. Things that will update a React component are a call to:
 
- - setState();
- - forceUpdate();
+ - `setState();`
+ - `forceUpdate();`
 
 
 ### JSX
@@ -60,14 +59,20 @@ const Game = () => (
 )
 ```
 
+## State & Props
 
-## Immutability
-https://gist.github.com/sebmarkbage/07bbe37bc42b6d4aef81
+### State
+*to be continued*
 
-## State
+### Props
+*to be continued*
+
+### State vs Props
+*to be continued*
 
 ### State Mutation
-In React-world never update state directly. Always make a copy of state if you are going to mutate it. This is better for performance.
+In React-world (or even JavaScript world) never update state (data) directly. Always make a copy of state if you are going to mutate it. This is better for performance.
+*to be continued*
 
 Incorrect:
 `this.state.level = 'Click Clock Wood';`
@@ -76,8 +81,10 @@ Incorrect:
 Correct:
 `this.setState({ level: 'Click Clock Wood' });`
 
+### Immutability
+
 ### Passing State Object
-Never pass your whole in your whole state object, but split it up in smaller parts. This is because you may have more states and you don't want to let React check all your states unnecerssarily. Just pass in a single object:
+Never pass your whole in your whole state object, but split it up in smaller parts. This is because you may have more states and you don't want to let React check all your states unnecessarily. Just pass in a single object:
 
 Incorrect:
 `this.setState(level);`
@@ -127,8 +134,6 @@ Declaration:
 ```
 { Level({ name: "Freeezeezy Peak", avatar:"freezeezypeak.jpg", description:"It's very cold here!" })}
 ```
-
-Source: https://medium.com/missive-app/45-faster-react-functional-components-now-3509a668e69f
 
 ## Events
 Events are attached via the component.
@@ -206,7 +211,7 @@ Performance-wise, this approach (though not noticable) is not the best one. When
 ## DOM
 In React querySelecting DOM elements, and for instance setting data in the HTML element, should not happen. With React loading, setting or modifying should happen in state, which should on it's turn render it out in JSX.
 
-By using function `refs` you can create access to the element in custom methods.
+By using function `refs` you can create access to the DOM element in custom methods.
 
 When this input is rendered to the page, this `ref` will create a reference on the class itself by the name you attach to the class. This then can be access, in this case in any method with: `this.hissatsuName`. In the console you can use `$r.hissatsuName` to referencw the value.
 
@@ -239,6 +244,7 @@ Good:
 
 ## PropTypes
 
+
 ## Serverside Rendering & Universal React Apps
 *to be continued*
 
@@ -248,7 +254,6 @@ React is JavaScript. If users choose to turn of JavaScript in the browser, they 
 
 
 ## Glossary
-
 - React:
 - ReactDOM:
 - VirtualDOM:

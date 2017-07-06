@@ -62,12 +62,15 @@ const Game = () => (
 ## State & Props
 
 ### State
+What is State?
 *to be continued*
 
 ### Props
+What is Props?
 *to be continued*
 
 ### State vs Props
+What is the difference?
 *to be continued*
 
 ### State Mutation

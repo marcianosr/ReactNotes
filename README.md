@@ -3,11 +3,12 @@ For learning purposes and getting better at React, I created 'ReactNotes' to des
 
 
 ## Why React?
-Apart from the Virtual DOM advantages (see Virtual DOM part for this), I think React forces you to write clean and reusable code in an easier way.    
+Apart from the Virtual DOM advantages (see Virtual DOM part for this), I listed my
 
 - No Manual DOM traversal: It's easy to get lost in a complex app and while updating data in the DOM. Finding, inserting, updating, removing DOM nodes using JavaScript and passing the right data to the right node can be cumbersome. In React it's the other way round. You declare your component with it's JSX and data (state or props). In React you only update state. React handles DOM manipulation when changing data, all under the hood.
-- Component-based writing of elements: React's nature works with a component-based structure. This is makes it easier to think and break down the structure of your application. You declare your component with its JSX and the expected state data. 
+- Component-based writing of elements: React's nature works with a component-based structure. This is makes it easier to think and break down the structure of your application. You declare (think and construct) your component with how it looks like, the expected state data it should receive and place it in projects hierarchy. I think React invites you to think of how to write your code in a clean and reusable way.
 - PropTypes: Type checking is not really implemented in JavaScript itself unless you create it yourself. React comes with a small library that helps you checking the types of data you put in your components.
+- It's popular and many people work with it: This may not be the most crucial reason to use React, but since React is one of the technologies widely used by developers/companies for web (and even native apps), I personally think it's worth learning it.
 
 Sometimes some actions in React seem a little harder to do, but writing better code can sometimes be harder or more time-consuming task.
 
@@ -255,3 +256,9 @@ React is JavaScript. If users choose to turn of JavaScript in the browser, they 
 - Expression container: `{this.props.children}`
 - Immutability:
 - PropTypes:
+
+
+### Sources
+- https://reactforbeginners.com/
+- http://reactkungfu.com/2015/10/the-difference-between-virtual-dom-and-dom/
+- https://gist.github.com/sebmarkbage/07bbe37bc42b6d4aef81
